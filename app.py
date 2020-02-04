@@ -11,7 +11,7 @@ def main():
 
     st.title('Costomer Lifetime Value')
 
-
+#fuck
 
     import plotly.plotly as py
 
