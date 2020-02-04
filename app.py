@@ -1,9 +1,7 @@
-#%%
+
 #first for github
 import streamlit as st
 
-
-#%%
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -16,10 +14,10 @@ def main():
 
 
     import plotly.plotly as py
-    import plotly.offline as pyoff
+
     import plotly.graph_objs as go
 
-    pyoff.init_notebook_mode()
+
 
     data['InvoiceDate'] = pd.to_datetime(data['InvoiceDate'])
     data['InvoiceYearMonth'] = data['InvoiceDate'].map(lambda date : date.year * 100 + date.month)
@@ -53,7 +51,7 @@ def main():
             title=title
         )
         fig = go.Figure(data=plot_data, layout=plot_layout)
-        pyoff.iplot(fig)
+
         return st.plotly_chart(fig)
 
     def plot_with_query(x,x_query,y,y_query, title, data = data_revenue):
@@ -69,7 +67,7 @@ def main():
             title=title
         )
         fig = go.Figure(data=plot_data, layout=plot_layout)
-        pyoff.iplot(fig)
+
         return st.plotly_chart(fig)
     #%%
     data_uk = pd.merge(data_uk, data_first_purchase, on = 'CustomerID')
@@ -138,7 +136,7 @@ def main():
                 title='New vs Existing'
             )
             fig = go.Figure(data=plot_data, layout=plot_layout)
-            pyoff.iplot(fig)
+
             st.plotly_chart(fig)
         elif plot == "Monthly User Ratio":
             plot_with_query('InvoiceYearMonth', "InvoiceYearMonth > 201101 and InvoiceYearMonth < 201112", 'CustomerID',
@@ -172,7 +170,7 @@ def main():
                 title=title
             )
             fig = go.Figure(data=plot_data, layout=plot_layout)
-            pyoff.iplot(fig)
+
             st.plotly_chart(fig)
 
         Reveune = Revenue_fun()
@@ -225,7 +223,7 @@ def main():
                 title='Frequnecy'
             )
             fig = go.Figure(data=plot_data, layout=plot_layout)
-            pyoff.iplot(fig)
+
             st.plotly_chart(fig)
 
         # %%
@@ -250,7 +248,7 @@ def main():
                 title='Monetary Value'
             )
             fig = go.Figure(data=plot_data, layout=plot_layout)
-            pyoff.iplot(fig)
+
             st.plotly_chart(fig)
 
         kmeans = KMeans(n_clusters=4)
