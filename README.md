@@ -8,3 +8,5 @@ https://towardsdatascience.com/data-driven-growth-with-python-part-1-know-your-m
 and JCharisTech & J-Secur1ty:
 
 https://www.youtube.com/watch?v=AABNTw64iGk
+
+web : https://ecommmerce-lvt.herokuapp.com/
