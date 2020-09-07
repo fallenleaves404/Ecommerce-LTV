@@ -4,4 +4,5 @@ altair==3.2.0
 matplotlib==3.1.1
 seaborn==0.9.0
 plotly==3.10.0
+sklearn == 0.0
 #The default Heroku Python build doesn't contain the libs needed for tkinter to be imported successfully. 
